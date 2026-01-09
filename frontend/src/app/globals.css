@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-forest: #1B4332;
+  --color-leaf: #2D6A4F;
+  --color-gold: #FFB703;
+  --color-white: #F8F9FA;
+  --color-mint: #D8F3DC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #F8F9FA;
+  min-height: 100vh;
+  color: #1B4332;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E9ECEF;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #2D6A4F 0%, #1B4332 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #40916C 0%, #2D6A4F 100%);
+}
+
+/* Card styles */
+@layer utilities {
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #D8F3DC;
+    box-shadow: 0 2px 8px rgba(27, 67, 50, 0.06);
+  }
+
+  .card-mint {
+    background: #D8F3DC;
+    border: 1px solid #B7E4C7;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #1B4332 0%, #2D6A4F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Status badges */
+.status-healthy {
+  background: #D8F3DC;
+  border: 1px solid #74C69D;
+  color: #1B4332;
+}
+
+.status-attention {
+  background: #FFF3CD;
+  border: 1px solid #FFB703;
+  color: #856404;
+}
+
+.status-critical {
+  background: #F8D7DA;
+  border: 1px solid #F5C6CB;
+  color: #721C24;
+}
+
+.status-unknown {
+  background: #E9ECEF;
+  border: 1px solid #CED4DA;
+  color: #6C757D;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  background: linear-gradient(135deg, #2D6A4F 0%, #1B4332 100%);
+  color: white;
+  box-shadow: 0 4px 14px rgba(27, 67, 50, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 67, 50, 0.35);
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  background: #D8F3DC;
+  color: #1B4332;
+  border: 1px solid #B7E4C7;
+}
+
+.btn-secondary:hover {
+  background: #B7E4C7;
+}
+
+.btn-accent {
+  @apply px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+  background: #FFB703;
+  color: #1B4332;
+  box-shadow: 0 4px 14px rgba(255, 183, 3, 0.3);
+}
+
+.btn-accent:hover {
+  background: #FFA000;
+  transform: translateY(-2px);
+}
+
+/* Input styles */
+.input-field {
+  @apply w-full px-4 py-3 rounded-xl transition-all duration-300;
+  background: #FFFFFF;
+  border: 1px solid #D8F3DC;
+  color: #1B4332;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #2D6A4F;
+  box-shadow: 0 0 0 3px rgba(45, 106, 79, 0.15);
+}
+
+.input-field::placeholder {
+  color: #ADB5BD;
+}
+
+/* Loading shimmer */
+.shimmer {
+  background: linear-gradient(90deg,
+      #F8F9FA 25%,
+      #D8F3DC 50%,
+      #F8F9FA 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Progress bar */
+.progress-bar {
+  height: 8px;
+  background: #D8F3DC;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2D6A4F 0%, #40916C 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(27, 67, 50, 0.12);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}

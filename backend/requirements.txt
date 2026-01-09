@@ -1,0 +1,22 @@
+# FastAPI and server
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Database
+sqlalchemy
+aiosqlite
+
+# AI/ML
+numpy
+pillow
+
+# Utilities
+python-dotenv
+pydantic
+pydantic-settings
+aiofiles
+python-dateutil
+
+# For development
+httpx
