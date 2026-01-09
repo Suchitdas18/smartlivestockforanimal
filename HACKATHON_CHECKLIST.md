@@ -91,13 +91,16 @@ useEffect(() => {
 ```
 
 ### 2. Real AI Model Integration (2-4 hours)
-**Status:** Using mock services  
-**Why:** Mock services simulate AI for demo purposes  
-**To Add Real AI:**
-- Install: `pip install ultralytics torch torchvision`
-- Download YOLOv8 weights
-- Replace mock detection with real inference
-- Note: Increases demo complexity, may not be worth it for hackathon
+**Status:** ✅ Complete  
+**Implementation:**
+- YOLOv8 nano model for real animal detection
+- ResNet18-based health classification with heuristic fallback
+- Automatic fallback to mock if dependencies not installed
+
+To enable real AI:
+```bash
+pip install -r requirements-ai.txt
+```
 
 ### 3. Push Notifications (1 hour)
 **Status:** Not implemented  

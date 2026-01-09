@@ -1,0 +1,16 @@
+# Smart Livestock AI - Real AI Model Dependencies
+# Install with: pip install -r requirements-ai.txt
+
+# YOLOv8 for animal detection
+ultralytics>=8.0.0
+
+# PyTorch for CNN health classification
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Image processing
+opencv-python>=4.8.0
+
+# Additional utilities for camera integration
+schedule>=1.2.0
+requests>=2.31.0

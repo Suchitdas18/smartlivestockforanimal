@@ -7,9 +7,16 @@ python-multipart
 sqlalchemy
 aiosqlite
 
-# AI/ML
+# AI/ML - Core
 numpy
 pillow
+
+# AI/ML - Real Models (Optional - for real AI inference)
+# Uncomment if you want real AI models instead of mock:
+# ultralytics      # YOLOv8 for animal detection
+# torch            # PyTorch for CNN health classification
+# torchvision      # Pre-trained models and transforms
+# opencv-python    # Image processing
 
 # Utilities
 python-dotenv
